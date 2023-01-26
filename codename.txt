@@ -22,7 +22,6 @@ Line 2 - Weather Information
 
 
 What things are excluded?
-• ExtendedSettings app
 • PixelLauncher Mods app
 • OnePunchNotifier
 • Icon Shapes
