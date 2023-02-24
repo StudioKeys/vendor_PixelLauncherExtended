@@ -18,19 +18,27 @@ Add these lines in device.mk or romname_devicename.mk:
 - More grids options, total of 14 grids. You can select these extra grids by going to **Wallpaper & style** > **App grid**. These are available for **Phones** only. Not available for **Tablets**.
 - Double tap to sleep *(LSPosed required)*.
 - You can choose different icons shapes while installing. Total of 17 icons shapes.
-- Material You At A Glance greetings.
+- Material You At A Glance greetings with Extended Settings app. Using this app you will be able to do some subtle modifications.
 - [Pixel Launcher Mods](https://github.com/KieronQuinn/PixelLauncherMods) by KieronQuinn. It has many cool features such as icon pack changer, recent section blur, etc.
 - Add-ons, which can enhance and add more functionality.
-- Push Notification Services
+- Enable hidden flags & developer options.
+> These flags can enable some subtle features & bring improvements in launcher. [Some of the flags usage with detailed explanation](https://sameerasw.notion.site/Pixel-Launcher-Flags-0068085015c646dda6210b02a6f719a9).
+- Push Notification Services.
 > Please note that this feature requires internet to provide you update & support related notifications.
 > We don't take any data or logs from your phone to provide you these notifications.
+- And more!!
+
+### Screenshots
+- [Click Here](https://telegra.ph/Pixel-Launcher-Extended-Screenshots-01-22)
 
 ### Compatibility
 This module is expected to work on ROMs which are based on fairly unmodified Android source code.
 - Android 13 AOSP-based ROMs
 - Android 13 QPR AOSP-based ROMs
+> Ensure your ROM is equipped with the necessary GApps, including Google apps and services. Without them, certain features may not function optimally on vanilla ROM. Make sure to flash proper GApps Package for your rom if you are using vanilla rom.
 
-> WARNING: It may not work on some LOS-based ROMs like RiceDroid. If you face any crashes on these ROMs, please look through the [troubleshooting section](#troubleshooting).
+### Implement In Custom ROMs
+If you wanna implement Pixel Launcher Extended in your custom rom then [visit here](https://github.com/StudioKeys/vendor_PixelLauncherExtended).
 
 ### Prerequisites
 - Compatible ROMs (**AOSP-based custom ROMs** or **Google Pixel stock ROM**) based on Android 13.
@@ -42,22 +50,29 @@ This module is expected to work on ROMs which are based on fairly unmodified And
 
 ### Installation
 - Uninstall any other launcher if you're using one. Only keep the default launcher
-- Download the module installation file from [download links](#download-links) available
+- Download the module installation file from [Download Links](#download-links) available
 - Flash the file in Magisk and select your desired modifications using volume keys
 - Reboot your device and go to **Settings** > **Apps** > **Default apps** > **Home app** and make sure **Pixel Launcher Extended** is selected
 
 #### Variants
-**Offline installer**  
-It doesn't require internet while flashing, but it's 100+ MB in size.
+**Offline Installer**  
+It doesn't require internet while flashing, but it's 100+ MB in size. It's available for download from [Download Links](#download-links) below. You can build it yourself too by following instructions from [Building from source](#building-from-source) section.
 
-**Online installer**  
-It requires internet while flashing and downloads only selected files by user during installation. It's less than 5 MB in size. Depending upon your internet this variant may take more time in flashing compared to offline installer.
+**Online Installer**  
+It requires internet while flashing and downloads only selected files by user during installation. It's less than 5 MB in size. Depending upon your internet this variant may take more time in flashing compared to offline installer. It's available for download from [Download Links](#download-links) below. You can build it yourself too by following instructions from [Building from source](#building-from-source) section.
+
+**Customize Installer**  
+It's like offline installer but less in size. Installer zip size depends upon the modifications a user chooses while making the zip. It's not available for download from download links below. However, You can build it yourself by following instructions from [Building from source](#building-from-source) section. This variant is good for those whose phone's volume keys are broken or if they don't want to follow long instructions involving volume key presses(multiple times) while flashing in Magisk.
 
 ### Activating Double Tap to Sleep
-- Make sure you installed DT2S while flashing the module
+- Make sure you installed DT2S while flashing the module(or selected it while making in case of customize installer)
 - After rebooting device, open LSPosed and enable **Pixel Launcher DT2S**
 - Force-stop Pixel Launcher from Settings (or reboot device again)
 - Double-tap once on home screen. Grant superuser permissions and enjoy
+
+### Activating Developer Options In Launcher
+- Make sure you enabled developer options while flashing the launcher(or selected it while making in case of customize installer)
+- Now go to phone's setting>About phone>Build number & tap it 7-8 times. This will enable launcher's developer options along with rom's developer option.
 
 ### Uninstallation
 - Simply uninstall module from Magisk
@@ -122,24 +137,29 @@ If you want to enable or disable wallpaer zoom effect then use this add-on.
 If you don't want to download built module from mirrors above, then you can build magisk module yourself.
 
 ### For Windows
-- Make sure 7-Zip is installed in your Windows PC. Download [7-Zip](https://www.7-zip.org/) from here
-- Clone the repository with [GitHub Desktop](https://desktop.github.com) or using git clone on WSL 2
+- PowerShell 5+ required.
+- Clone the repository with [GitHub Desktop](https://desktop.github.com) or using [Git app](https://git-scm.com/download/win).
 ```bat
 :: ONLY RUN THIS IF YOU USE GIT AND HAVE IT INSTALLED
-git clone https://github.com/saitamasahil/Pixel-Launcher-Extended
+git clone --depth=1 https://github.com/saitamasahil/Pixel-Launcher-Extended
 ```
-- Run `autobuild.bat`
+- Go to the directory where you cloned & hold `Shift` key & right click.
+- Now click `Open PowerShell window here`
+- Copy & paste this command
+```bat
+powershell -ExecutionPolicy Bypass -File ./autobuild.ps1
+```
+- Select desired installer to make magisk module from PLE Builder
 - Don't use git in command-line or powershell to clone repo. Some users reported that it's corrupting contents.
-- Currently it supports making of **offline installer**. Making of **online installer** will be added later.
 
 ### For Ubuntu, Debian, and other Linux distributions
-- The required zip package install command is in the script itself. However, if you encounter any errors, you can install **zip** manually. On Ubuntu or Debian, use the following command to do so."
+- The required zip package install command is in the script itself. However, if you encounter any errors, you can install **zip** manually. On Ubuntu or Debian, Use the following command to do so."
 ```sh
 sudo apt install zip
 ```
 - Now clone the repo using git.
 ```sh
-git clone https://github.com/saitamasahil/Pixel-Launcher-Extended
+git clone --depth=1 https://github.com/saitamasahil/Pixel-Launcher-Extended
 ```
 - Navigate to the **Pixel-Launcher-Extended** folder.
 ```sh
@@ -149,27 +169,48 @@ cd Pixel-Launcher-Extended
 ```sh
 bash autobuild.sh
 ```
-- Choose Offline Installer or Online Installer using number keys.
+- Choose `Offline Installer`, `Online Installer` or `Customize Installer` using number keys from PLE Builder.
+- If you wanna make the module again & this time **Different Installer Magisk Module zip** then run autobuild.sh again.
+```sh
+bash autobuild.sh
+```
+- Use below command to update repo if you have already cloned it before.
+```sh
+git pull
+```
 
 ### For Termux
-- Open Termux, copy & paste this command
+- Open Termux, copy & paste this command:
+```sh
+termux-setup-storage
+```
+and give Termux storage access. If you get this warning "It appears that directory '~/storage' already exists. This script is going to rebuild its structure from scratch, wiping all dangling files. The actual storage content is not going to be deleted" then just do press "y". It won't do any harm to your device.
+- Now copy & paste this command:
 ```sh
 pkg upgrade || true
-pkg install -y zip git
+pkg install -y git
 rm -rf Pixel-Launcher-Extended
-git clone https://github.com/saitamasahil/Pixel-Launcher-Extended
+git clone --depth=1 https://github.com/saitamasahil/Pixel-Launcher-Extended
 cd Pixel-Launcher-Extended
 bash autobuild.sh
-termux-setup-storage
 mv Pixel\ Launcher\ Extended* /sdcard
+echo "Your magisk module is available in Internal Storage"
 ```
 - Please make sure to grant storage permissions, if Termux asks you to do so, you will get Magisk module in your internal storage.
-- Choose Offline Installer or Online Installer using number keys.
+- Choose `Offline Installer`, `Online Installer` or `Customize Installer` using number keys from PLE Builder.
 - Use [Termux From F-Droid](https://f-droid.org/en/packages/com.termux/) to perform these tasks.
-- If you get this warning "It appears that directory '~/storage' already exists.
-This script is going to rebuild its structure from
-scratch, wiping all dangling files. The actual storage
-content IS NOT going to be deleted" then just do press "y". It won't do any harm to your device.
+- The required zip package install command is in the script itself. However, if you encounter any errors, you can install **zip** manually. Use the following command to do so."
+```sh
+pkg install zip
+```
+- If you wanna make the module again & this time **Different Installer Magisk Module zip** then close Termux. Open new session and copy & paste the following command:
+```sh
+cd Pixel-Launcher-Extended
+git pull
+bash autobuild.sh
+mv Pixel\ Launcher\ Extended* /sdcard
+echo "Your magisk module is available in Internal Storage"
+```
 
 ## Troubleshooting
 If you face any issues while using Pixel Launcher Extended then look into this section first before asking in support group on Telegram.
@@ -179,7 +220,7 @@ Try updating Google App, Google Play Services, Android System Intelligence (ASI)
 After trying above solution if it still doesn't work or if you are facing random crashes in launcher then download [At A Glance Enhancer add-on](#at-a-glance-enhancer). It contains Android System Intelligence (which may fix all these issues).
 
 ### Material You isn't working properly, it's not changing color according to wallpaper
-Your ROM may have its own implementation of Material You and that may be interfering with Pixel Launcher Extended.
+Your ROM may have its own implementation of Material You and that may be interfering with Pixel Launcher Extended. Although we have implemented fix for this within launcher, It is possible that you may still face this issue.
 
 To fix this issue, please follow these steps:
 - [Download Termux](https://f-droid.org/en/packages/com.termux/)
@@ -199,8 +240,18 @@ Force-stop the app and relaunch.
 ### Pixel Launcher Extended crashes while going to recent tab
 Turn off **Overview suggestions** from Pixel Launcher's settings.
 
+### Quick Search Bar not opening
+Make sure your rom has proper GApps. Also if your rom doesn't have Google App then download it from play store.
+
 ### Pixel Launcher Extended not showing in default home settings
 Uninstall updates of the Pixel Launcher app and reboot your device.
+
+## Donation Links
+If you have found this project helpful and would like to support its ongoing development, please consider making a donation. Your support is greatly appreciated and will help to ensure that this project can continue to be maintained and improved.
+
+Thank you for your generosity!
+- [Paypal](https://www.paypal.com/paypalme/sahilsaitama96)
+- UPI(Google Pay): `sahilmanchanda1996@okaxis`
 
 ## Credits/Thanks
 - Google
@@ -209,7 +260,7 @@ Uninstall updates of the Pixel Launcher app and reboot your device.
 - [iamlooper](https://github.com/iamlooper/)
 - [KieronQuinn](https://github.com/KieronQuinn)
 - [uragiristereo](https://github.com/uragiristereo)
-- [Monet Icons Team](https://teamfiles.net/about_monet-team.html)
+- [Monet Icons Team](https://teamfiles.github.io/about_monet-team.html)
 - [siavash79](https://github.com/siavash79)
 - [Kingsman44](https://github.com/Kingsman44)
 - [anarchist22](https://telegram.me/anarchist22)
@@ -221,8 +272,8 @@ Uninstall updates of the Pixel Launcher app and reboot your device.
 - [atharvap8](https://github.com/atharvap8)
 - [jaaat4u](https://github.com/jaaat4u)
 - [selfmusing](https://github.com/selfmusing)
-- [Ardjlon](https://github.com/ardjlon)
-- [Agam](https://github.com/agam778)
+- [Sameera](https://telegram.me/sameera_s_w)
+- [naokoshoto](https://github.com/naokoshoto)
 
 Brought to you by [TeamFiles](https://github.com/TeamFiles)!
 

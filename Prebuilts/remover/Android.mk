@@ -23,7 +23,6 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_OVERRIDES_PACKAGES := \
         AsusLauncherDev \
         CustomPixelLauncherOverlay \
-        DerpLauncherQuickStep \
         Home \
         Launcher2 \
         Launcher3 \
