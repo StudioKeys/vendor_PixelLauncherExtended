@@ -1,7 +1,7 @@
 #
 # Copyright (C) 2023 StudioKeys
 # Copyright (C) 2022 Ardjlon
-# Copyright (C) 2022 Team Files
+# Copyright (C) 2023 Team Files
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.

@@ -4,37 +4,43 @@
 
 **Pixel Launcher Extended** is a Magisk module by **TeamFiles** with many cool features compared to original Pixel Launcher by Google.
 
-Add these lines in device.mk or romname_devicename.mk:
->**_$(call inherit-product, vendor/PixelLauncherExtended/PixelLauncher.mk)_**
-
->**_PIXEL_LAUNCHER_VARIANT := name_of_variant_** <br/>
->**_ICONS_VARIANT := name_of_variant_**<br/>
-
 ### Features
-- Extra themed icon packs support. Total of 6 icon packs for your favourite apps and games **(BETA)**.
-> **This feature is currently in beta due to Android 13 restrictions**  
-> Android 13 prefers themed icons made by apps, it looks through the apps first, only then it looks for themed icons overlay (which we use).  
-> TeamFiles icons are very closed to stock themed icons, so we recommend using them.
+- Extra themed icons. Total of 1250+ icons.  
 - More grids options, total of 14 grids. You can select these extra grids by going to **Wallpaper & style** > **App grid**. These are available for **Phones** only. Not available for **Tablets**.
 - Double tap to sleep *(LSPosed required)*.
-- You can choose different icons shapes while installing. Total of 17 icons shapes.
+- You can choose different icons shapes using Icon Shape Changer app(It can be installed as a choice).
 - Material You At A Glance greetings with Extended Settings app. Using this app you will be able to do some subtle modifications.
 - [Pixel Launcher Mods](https://github.com/KieronQuinn/PixelLauncherMods) by KieronQuinn. It has many cool features such as icon pack changer, recent section blur, etc.
 - Add-ons, which can enhance and add more functionality.
 - Enable hidden flags & developer options.
 > These flags can enable some subtle features & bring improvements in launcher. [Some of the flags usage with detailed explanation](https://sameerasw.notion.site/Pixel-Launcher-Flags-0068085015c646dda6210b02a6f719a9).
-- Push Notification Services.
-> Please note that this feature requires internet to provide you update & support related notifications.
-> We don't take any data or logs from your phone to provide you these notifications.
 - And more!!
 
-### Screenshots
-- [Click Here](https://telegra.ph/Pixel-Launcher-Extended-Screenshots-01-22)
+### Preview
+<div align="center">
+    <img src="Screenshots/preview1.png">
+</div>
+<div align="center">
+    <img src="Screenshots/preview2.png">
+</div>
+<div align="center">
+    <img src="Screenshots/preview3.png">
+</div>
+<div align="center">
+    <img src="Screenshots/preview4.png">
+</div>
+<div align="center">
+    <img src="Screenshots/preview5.png">
+</div>
+<div align="center">
+    <img src="Screenshots/preview6.png">
+</div>
 
 ### Compatibility
 This module is expected to work on ROMs which are based on fairly unmodified Android source code.
 - Android 13 AOSP-based ROMs
 - Android 13 QPR AOSP-based ROMs
+- Android 13 QPR2 AOSP-based ROMs
 > Ensure your ROM is equipped with the necessary GApps, including Google apps and services. Without them, certain features may not function optimally on vanilla ROM. Make sure to flash proper GApps Package for your rom if you are using vanilla rom.
 
 ### Implement In Custom ROMs
@@ -43,10 +49,11 @@ If you wanna implement Pixel Launcher Extended in your custom rom then [visit he
 ### Prerequisites
 - Compatible ROMs (**AOSP-based custom ROMs** or **Google Pixel stock ROM**) based on Android 13.
 - Device rooted by [Magisk latest stable](https://github.com/topjohnwu/Magisk/releases/latest).
+> It is strongly advised to only use the official version of Magisk, as there have been reports from users of various issues such as bootloops and other problems when using unofficial forks of the software. Therefore, it is highly recommended that users only download and install Magisk from the official source to ensure the stability of Pixel Launcher Extended.
 - [LSPosed](https://github.com/LSPosed/LSPosed) *(optional, if you want to use double tap to sleep feature)*
 
 **Disclaimer**
-- Make sure you flashed the **Bootloop saver** module before flashing **Pixel Launcher Extended**. We **WON'T** be responsible if anything happens with your device. Bootloops are not expected, but you should always be prepared for the worst!
+- We **WON'T** be responsible if anything happens with your device. Bootloops are not expected, but you should always be prepared for the worst!
 
 ### Installation
 - Uninstall any other launcher if you're using one. Only keep the default launcher
@@ -67,7 +74,7 @@ It's like offline installer but less in size. Installer zip size depends upon th
 ### Activating Double Tap to Sleep
 - Make sure you installed DT2S while flashing the module(or selected it while making in case of customize installer)
 - After rebooting device, open LSPosed and enable **Pixel Launcher DT2S**
-- Force-stop Pixel Launcher from Settings (or reboot device again)
+- Force-stop Pixel Launcher Extended from Settings (or reboot device again)
 - Double-tap once on home screen. Grant superuser permissions and enjoy
 
 ### Activating Developer Options In Launcher
@@ -112,7 +119,7 @@ If you don't get unified & universal search bar in Pixel Launcher Extended shown
 - [Looper](https://github.com/iamlooper)
 
 #### Hide Apps Feature
-You can enable the hide app feature in Pixel Launcher by using a third-party app called **Pixel Mods**. *(**LSPosed** is required for this add-on)*.
+You can enable the hide app feature in Pixel Launcher Extended by using a third-party app called **Pixel Mods**. *(**LSPosed** is required for this add-on)*.
 - Install the [Pixel Mods App](https://play.google.com/store/apps/details?id=com.metris.xposed.pmods)
 - Open LSPosed and click **Pixel Mods** from modules section. Toggle **Enable Module** and make sure **Pixel Launcher** has ticked
 - Reboot device
@@ -151,6 +158,7 @@ powershell -ExecutionPolicy Bypass -File ./autobuild.ps1
 ```
 - Select desired installer to make magisk module from PLE Builder
 - Don't use git in command-line or powershell to clone repo. Some users reported that it's corrupting contents.
+> PLE Builder for Windows doesn't support making of Customize Installer yet. Use Linux or Termux to make Customize Installer.
 
 ### For Ubuntu, Debian, and other Linux distributions
 - The required zip package install command is in the script itself. However, if you encounter any errors, you can install **zip** manually. On Ubuntu or Debian, Use the following command to do so."
@@ -238,13 +246,13 @@ su -c settings delete secure theme_customization_overlay_packages
 Force-stop the app and relaunch.
 
 ### Pixel Launcher Extended crashes while going to recent tab
-Turn off **Overview suggestions** from Pixel Launcher's settings.
+Turn off **Overview suggestions** from Pixel Launcher Extended's settings.
 
 ### Quick Search Bar not opening
 Make sure your rom has proper GApps. Also if your rom doesn't have Google App then download it from play store.
 
-### Pixel Launcher Extended not showing in default home settings
-Uninstall updates of the Pixel Launcher app and reboot your device.
+### Pixel Launcher Extended not showing in default home settings or no launcher showing after flashing PLE
+Uninstall updates of the Pixel Launcher app and reboot your device. Make sure PLE isn't in magisk's deny list.
 
 ## Donation Links
 If you have found this project helpful and would like to support its ongoing development, please consider making a donation. Your support is greatly appreciated and will help to ensure that this project can continue to be maintained and improved.

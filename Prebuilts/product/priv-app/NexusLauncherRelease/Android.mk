@@ -1,6 +1,6 @@
-#
+# Copyright (C) 2023 Team Files
 # Copyright (C) 2022 Ardjlon
-# Copyright (C) 2022 Team Files
+# Copyright (C) 2023 Team Files
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,30 +18,24 @@ LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := NexusLauncherReleaseMod
-ifeq ($(PIXEL_LAUNCHER_VARIANT),extragrids)
+ifeq ($(PIXEL_LAUNCHER_VARIANT),glance10)
 LOCAL_SRC_FILES := NexusLauncherRelease10.apk
-else ifeq ($(PIXEL_LAUNCHER_VARIANT),glance1)
-LOCAL_SRC_FILES := NexusLauncherRelease01.apk
-else ifeq ($(PIXEL_LAUNCHER_VARIANT),glance2)
-LOCAL_SRC_FILES := NexusLauncherRelease02.apk
-else ifeq ($(PIXEL_LAUNCHER_VARIANT),fullmod1)
+else ifeq ($(PIXEL_LAUNCHER_VARIANT),glance20)
+LOCAL_SRC_FILES := NexusLauncherRelease20.apk
+else ifeq ($(PIXEL_LAUNCHER_VARIANT),glance11)
 LOCAL_SRC_FILES := NexusLauncherRelease11.apk
-else ifeq ($(PIXEL_LAUNCHER_VARIANT),fullmod2)
+else ifeq ($(PIXEL_LAUNCHER_VARIANT),glance21)
+LOCAL_SRC_FILES := NexusLauncherRelease21.apk
+else ifeq ($(PIXEL_LAUNCHER_VARIANT),glance12)
 LOCAL_SRC_FILES := NexusLauncherRelease12.apk
-else ifeq ($(PIXEL_LAUNCHER_VARIANT),nomod)
+else ifeq ($(PIXEL_LAUNCHER_VARIANT),glance22)
+LOCAL_SRC_FILES := NexusLauncherRelease22.apk
+else ifeq ($(PIXEL_LAUNCHER_VARIANT),nomod0)
 LOCAL_SRC_FILES := NexusLauncherRelease00.apk
-else ifeq ($(PIXEL_LAUNCHER_VARIANT),extragridsz)
-LOCAL_SRC_FILES := NexusLauncherRelease10z.apk
-else ifeq ($(PIXEL_LAUNCHER_VARIANT),glance1z)
-LOCAL_SRC_FILES := NexusLauncherRelease01z.apk
-else ifeq ($(PIXEL_LAUNCHER_VARIANT),glance2z)
-LOCAL_SRC_FILES := NexusLauncherRelease02z.apk
-else ifeq ($(PIXEL_LAUNCHER_VARIANT),fullmod1z)
-LOCAL_SRC_FILES := NexusLauncherRelease11z.apk
-else ifeq ($(PIXEL_LAUNCHER_VARIANT),fullmod2z)
-LOCAL_SRC_FILES := NexusLauncherRelease12z.apk
-else ifeq ($(PIXEL_LAUNCHER_VARIANT),nomodz)
-LOCAL_SRC_FILES := NexusLauncherRelease00z.apk
+else ifeq ($(PIXEL_LAUNCHER_VARIANT),nomod1)
+LOCAL_SRC_FILES := NexusLauncherRelease01.apk
+else ifeq ($(PIXEL_LAUNCHER_VARIANT),nomod2)
+LOCAL_SRC_FILES := NexusLauncherRelease02.apk
 else
 $(error Not set PIXEL_LAUNCHER_VARIANT, read more in vendor/PixelLauncherExtended/codename.txt)
 endif
