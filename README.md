@@ -50,6 +50,7 @@ If you wanna implement Pixel Launcher Extended in your custom rom then [visit he
 - Compatible ROMs (**AOSP-based custom ROMs** or **Google Pixel stock ROM**) based on Android 13.
 - Device rooted by [Magisk latest stable](https://github.com/topjohnwu/Magisk/releases/latest).
 > It is strongly advised to only use the official version of Magisk, as there have been reports from users of various issues such as bootloops and other problems when using unofficial forks of the software. Therefore, it is highly recommended that users only download and install Magisk from the official source to ensure the stability of Pixel Launcher Extended.
+- If you are using KernelSU instead of Magisk then you can flash Customize Installer. However, you may have to give root access manually to some apps which install after flashing PLE. Offline, Online & Manual Installers aren't supported for KernelSU.
 - [LSPosed](https://github.com/LSPosed/LSPosed) *(optional, if you want to use double tap to sleep feature)*
 
 **Disclaimer**
@@ -61,32 +62,36 @@ If you wanna implement Pixel Launcher Extended in your custom rom then [visit he
 - Flash the file in Magisk and select your desired modifications using volume keys
 - Reboot your device and go to **Settings** > **Apps** > **Default apps** > **Home app** and make sure **Pixel Launcher Extended** is selected
 
-#### Variants
-**Offline Installer**  
-It doesn't require internet while flashing, but it's 100+ MB in size. It's available for download from [Download Links](#download-links) below. You can build it yourself too by following instructions from [Building from source](#building-from-source) section.
+### Variants
+Choose from the four variants that are available and match your needs. These 4 variants are:
 
-**Online Installer**  
-It requires internet while flashing and downloads only selected files by user during installation. It's less than 5 MB in size. Depending upon your internet this variant may take more time in flashing compared to offline installer. It's available for download from [Download Links](#download-links) below. You can build it yourself too by following instructions from [Building from source](#building-from-source) section.
+#### Offline Installer
+It doesn't require internet while flashing, but it is 100+ MB in size. It's available for download from [Download Links](#download-links) below. You can build it yourself too by following instructions from [Building from source](#building-from-source) section.
 
-**Customize Installer**  
+#### Online Installer
+It requires internet while flashing and downloads only selected files by user during installation. It is less than 5 MB in size. Depending upon your internet this variant may take more time in flashing compared to offline installer. It's available for download from [Download Links](#download-links) below. You can build it yourself too by following instructions from [Building from source](#building-from-source) section.
+
+#### Customize Installer
 It's like offline installer but less in size. Installer zip size depends upon the modifications a user chooses while making the zip. It's not available for download from download links below. However, You can build it yourself by following instructions from [Building from source](#building-from-source) section. This variant is good for those whose phone's volume keys are broken or if they don't want to follow long instructions involving volume key presses(multiple times) while flashing in Magisk.
 
+#### Manual Installer
+It's a mixture of offline & customize installer. It is 100+ MB in size. You can modify the installation options(like customize installer) by editing the config.txt file in the installer zip. To learn how to edit config.txt and flash the manual installer, [click here](https://github.com/saitamasahil/Pixel-Launcher-Extended/blob/main/manual_installer_instructions.md). It's available for download from [Download Links](#download-links) below. You can build it yourself too by following instructions from [Building from source](#building-from-source) section. This variant is good for those whose phone's volume keys are broken or if they don't want to follow long instructions involving volume key presses(multiple times) while flashing in Magisk. Also, you can edit config.txt file again to choose different modifications & installation options and flash it again in magisk.
+
 ### Activating Double Tap to Sleep
-- Make sure you installed DT2S while flashing the module(or selected it while making in case of customize installer)
-- After rebooting device, open LSPosed and enable **Pixel Launcher DT2S**
-- Force-stop Pixel Launcher Extended from Settings (or reboot device again)
-- Double-tap once on home screen. Grant superuser permissions and enjoy
+- Make sure you installed DT2S while flashing the module(or selected it while making in case of customize or manual installer).
+- After rebooting device, open LSPosed and enable **Pixel Launcher DT2S**.
+- Force-stop Pixel Launcher Extended from Settings (or reboot device again).
+- Double-tap once on home screen. Grant superuser permissions and enjoy.
 
 ### Activating Developer Options In Launcher
-- Make sure you enabled developer options while flashing the launcher(or selected it while making in case of customize installer)
-- Now go to phone's setting>About phone>Build number & tap it 7-8 times. This will enable launcher's developer options along with rom's developer option.
+- Go to phone's setting>About phone>Build number & tap it 7-8 times. This will enable launcher's developer options along with rom's developer option.
 
 ### Uninstallation
-- Simply uninstall module from Magisk
+- Simply uninstall module from Magisk.
 
 ### Updating
-- When there is new update available, simply flash newer version in Magisk without removing previous version
-- If you have flashed latest version already and want to select different choices while flashing, you can always flash module again without removing/uninstalling existing module
+- When there is new update available, simply flash newer version in Magisk without removing previous version.
+- If you have flashed latest version already and want to select different choices while flashing, you can always flash module again without removing/uninstalling existing module.
 
 ### Add-ons
 These are optional add-ons, they add extra functionality to Pixel Launcher Extended.
@@ -94,12 +99,12 @@ These are optional add-ons, they add extra functionality to Pixel Launcher Exten
 #### At A Glance Enhancer
 This addon will enhance **At A Glance** and will enable new settings such as Doorbell, Timer, Stopwatch, Bedtime, Fitness tracker, Torch suggestion, Connected devices and much more.  
 Made by [Pixelify](https://github.com/Kingsman44/Pixelify) developer, Kingsmanz. It also fixes the select feature, At A Glance weather if your ROM doesn't have proper GApps or due to some other reasons if you faced these issues.
-- [Download](https://www.pling.com/p/1938895/)
-- Flash in Magisk
-- Reboot device
-- Check out the new At A Glance settings. In most ROMs this will be the final step
-  * If you didn't get the new settings, then force-stop the Google app and reboot your device
-  * If you still didn't get those settings, uninstall updates of Google app and update from Play Store and reboot your device
+- [Download](https://www.pling.com/p/1938895/) the magisk module.
+- Flash in Magisk.
+- Reboot device.
+- Check out the new At A Glance settings. In most ROMs this will be the final step.
+  * If you didn't get the new settings, then force-stop the Google app and reboot your device.
+  * If you still didn't get those settings, uninstall updates of Google app and update from Play Store and reboot your device.
 
 **Credits**
 - Made by [Kingsmanz](https://github.com/Kingsman44)
@@ -107,29 +112,18 @@ Made by [Pixelify](https://github.com/Kingsman44/Pixelify) developer, Kingsmanz.
 - [Video showcase](https://graph.org/file/5cd90b41ec3563e69c62f.mp4)
 - [Screenshots](https://graph.org/At-A-Glance-Enhancer-Screenshots-11-16)
 
-#### Auto Universal Search Bar Enabler
-If you don't get unified & universal search bar in Pixel Launcher Extended shown in these screenshots ([this](https://graph.org/file/ee8e311942af77de891c8.jpg) and [this](https://graph.org/file/dfe907c4aa1283a535aee.jpg)) then flash this module in Magisk. It will permanently enable universal search bar.  
-> NOTICE: You will get this feature by default after flashing **Pixel Launcher Extended**.  
-> Only in some ROMs, you won't get it. Flash only, **AND ONLY** if you don't get this feature.
-- [Download](https://pling.com/p/1898907/)
-- Flash in Magisk
-- Reboot device
-
-**Credits**
-- [Looper](https://github.com/iamlooper)
-
 #### Hide Apps Feature
 You can enable the hide app feature in Pixel Launcher Extended by using a third-party app called **Pixel Mods**. *(**LSPosed** is required for this add-on)*.
-- Install the [Pixel Mods App](https://play.google.com/store/apps/details?id=com.metris.xposed.pmods)
-- Open LSPosed and click **Pixel Mods** from modules section. Toggle **Enable Module** and make sure **Pixel Launcher** has ticked
-- Reboot device
-- Check out the **Hide Apps Feature** by pressing hold on empty space on home screen
+- Install the [Pixel Mods App](https://play.google.com/store/apps/details?id=com.metris.xposed.pmods).
+- Open LSPosed and click **Pixel Mods** from modules section. Toggle **Enable Module** and make sure **Pixel Launcher** has ticked.
+- Reboot device.
+- Check out the **Hide Apps Feature** by pressing hold on empty space on home screen.
 
 #### Wallpaper Zoom Effect Enabler & Disabler
 If you want to enable or disable wallpaer zoom effect then use this add-on.
-- [Download](https://index.teamfiles.workers.dev/0:/WallZoomAddon/)
-- Flash in Magisk
-- Reboot device
+- [Download](https://index.teamfiles.workers.dev/0:/WallZoomAddon/) the magisk module.
+- Flash in Magisk.
+- Reboot device.
 
 **Credits**
 - [xdsolraC](https://telegram.me/xdsolraC)
@@ -141,31 +135,24 @@ If you want to enable or disable wallpaer zoom effect then use this add-on.
 
 ## Building from source
 
-If you don't want to download built module from mirrors above, then you can build magisk module yourself.
+If you don't want to download built module from mirrors above, then you can build magisk module yourself using PLE Builder. You can run PLE Builder in Linux based distros & Termux(F-Droid version). This is one time process & It installs PLE Builder into your system. You can run or update the builder in future by typing **PLE** or **ple** in your Terminal/Termux & selecting **Update PLE Builder** option.
 
-### For Windows
-- PowerShell 5+ required.
-- Clone the repository with [GitHub Desktop](https://desktop.github.com) or using [Git app](https://git-scm.com/download/win).
-```bat
-:: ONLY RUN THIS IF YOU USE GIT AND HAVE IT INSTALLED
-git clone --depth=1 https://github.com/saitamasahil/Pixel-Launcher-Extended
-```
-- Go to the directory where you cloned & hold `Shift` key & right click.
-- Now click `Open PowerShell window here`
-- Copy & paste this command
-```bat
-powershell -ExecutionPolicy Bypass -File ./autobuild.ps1
-```
-- Select desired installer to make magisk module from PLE Builder
-- Don't use git in command-line or powershell to clone repo. Some users reported that it's corrupting contents.
-> PLE Builder for Windows doesn't support making of Customize Installer yet. Use Linux or Termux to make Customize Installer.
+---
+**NOTE**
 
-### For Ubuntu, Debian, and other Linux distributions
-- The required zip package install command is in the script itself. However, if you encounter any errors, you can install **zip** manually. On Ubuntu or Debian, Use the following command to do so."
-```sh
-sudo apt install zip
-```
-- Now clone the repo using git.
+PLE Builder relies on an rc file to store and load its configuration settings & it supports the following shells that have rc files:
+- bash
+- zsh
+- csh
+- ksh
+- tcsh
+
+If you are using a different shell that does not have an rc file, you can switch to one of the supported shells.
+
+---
+
+### Install & run PLE Builder in Ubuntu, Debian, and other Linux distributions
+- Clone the repo using git.
 ```sh
 git clone --depth=1 https://github.com/saitamasahil/Pixel-Launcher-Extended
 ```
@@ -173,52 +160,35 @@ git clone --depth=1 https://github.com/saitamasahil/Pixel-Launcher-Extended
 ```sh
 cd Pixel-Launcher-Extended
 ```
-- Run autobuild.sh.
+- To install PLE Builder type this command.
 ```sh
-bash autobuild.sh
+chmod +x builder_dependencies.sh && ./builder_dependencies.sh
 ```
-- Choose `Offline Installer`, `Online Installer` or `Customize Installer` using number keys from PLE Builder.
-- If you wanna make the module again & this time **Different Installer Magisk Module zip** then run autobuild.sh again.
-```sh
-bash autobuild.sh
-```
-- Use below command to update repo if you have already cloned it before.
-```sh
-git pull
-```
+- Once you see the installation success message, exit the terminal and restart it. Then, use the **PLE** or **ple** command to launch PLE Builder.
+- Choose desired option using number keys.
+- To run PLE Builder again, Type **PLE** or **ple** in Terminal.
 
-### For Termux
+### Install & run PLE Builder in Termux
 - Open Termux, copy & paste this command:
 ```sh
 termux-setup-storage
 ```
 and give Termux storage access. If you get this warning "It appears that directory '~/storage' already exists. This script is going to rebuild its structure from scratch, wiping all dangling files. The actual storage content is not going to be deleted" then just do press "y". It won't do any harm to your device.
-- Now copy & paste this command:
+- Now copy & paste these commands to install PLE Builder.
 ```sh
-pkg upgrade || true
+pkg update && pkg upgrade
 pkg install -y git
 rm -rf Pixel-Launcher-Extended
 git clone --depth=1 https://github.com/saitamasahil/Pixel-Launcher-Extended
 cd Pixel-Launcher-Extended
-bash autobuild.sh
-mv Pixel\ Launcher\ Extended* /sdcard
-echo "Your magisk module is available in Internal Storage"
+chmod +x builder_dependencies.sh && ./builder_dependencies.sh
 ```
-- Please make sure to grant storage permissions, if Termux asks you to do so, you will get Magisk module in your internal storage.
-- Choose `Offline Installer`, `Online Installer` or `Customize Installer` using number keys from PLE Builder.
+- Once you see the installation success message, exit the termux and restart it. Then, use the **PLE** or **ple** command to launch PLE Builder.
+- Please make sure to grant storage permissions.
+- Choose desired option using number keys.
+- Use **Move Magisk Module To Internal Storage** option to move magisk module to Phone's Internal Storage after making it.
 - Use [Termux From F-Droid](https://f-droid.org/en/packages/com.termux/) to perform these tasks.
-- The required zip package install command is in the script itself. However, if you encounter any errors, you can install **zip** manually. Use the following command to do so."
-```sh
-pkg install zip
-```
-- If you wanna make the module again & this time **Different Installer Magisk Module zip** then close Termux. Open new session and copy & paste the following command:
-```sh
-cd Pixel-Launcher-Extended
-git pull
-bash autobuild.sh
-mv Pixel\ Launcher\ Extended* /sdcard
-echo "Your magisk module is available in Internal Storage"
-```
+- To run PLE Builder again, Type **PLE** or **ple** in Terminal.
 
 ## Troubleshooting
 If you face any issues while using Pixel Launcher Extended then look into this section first before asking in support group on Telegram.
@@ -242,7 +212,7 @@ su -c settings delete secure theme_customization_overlay_packages
 ### Enabled “Hide Clock” from the Pixel Launcher Mods app and now the clock isn't returning
 [Watch this video](https://index.teamfiles.workers.dev/0:/clock%20fix.mp4) for instructions to fix this issue.
 
-### Pixel Launcher Mods stuck at loading screen or showing error
+### Pixel Launcher Mods stucked at loading screen or showing error
 Force-stop the app and relaunch.
 
 ### Pixel Launcher Extended crashes while going to recent tab
@@ -251,7 +221,7 @@ Turn off **Overview suggestions** from Pixel Launcher Extended's settings.
 ### Quick Search Bar not opening
 Make sure your rom has proper GApps. Also if your rom doesn't have Google App then download it from play store.
 
-### Pixel Launcher Extended not showing in default home settings or no launcher showing after flashing PLE
+### Pixel Launcher Extended is not showing in default home settings or no launcher showing after flashing PLE
 Uninstall updates of the Pixel Launcher app and reboot your device. Make sure PLE isn't in magisk's deny list.
 
 ## Donation Links
@@ -282,6 +252,7 @@ Thank you for your generosity!
 - [selfmusing](https://github.com/selfmusing)
 - [Sameera](https://telegram.me/sameera_s_w)
 - [naokoshoto](https://github.com/naokoshoto)
+- [Ryuk](https://telegram.me/anonymousx97)
 
 Brought to you by [TeamFiles](https://github.com/TeamFiles)!
 
