@@ -40,5 +40,6 @@ PRODUCT_PACKAGES += \
    PixelThemesStub2022_and_newer \
    QuickAccessWalletMod \
    Remover \
+   ExtendedSettings \
    ThemedIconsOverlay \
    WallpaperPickerGoogleReleaseMod

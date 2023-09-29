@@ -36,6 +36,12 @@ else ifeq ($(PIXEL_LAUNCHER_VARIANT),nomod1)
 LOCAL_SRC_FILES := NexusLauncherRelease01.apk
 else ifeq ($(PIXEL_LAUNCHER_VARIANT),nomod2)
 LOCAL_SRC_FILES := NexusLauncherRelease02.apk
+else ifeq ($(PIXEL_LAUNCHER_VARIANT),nomod3)
+LOCAL_SRC_FILES := NexusLauncherRelease03.apk
+else ifeq ($(PIXEL_LAUNCHER_VARIANT),glance13)
+LOCAL_SRC_FILES := NexusLauncherRelease13.apk
+else ifeq ($(PIXEL_LAUNCHER_VARIANT),glance23)
+LOCAL_SRC_FILES := NexusLauncherRelease23.apk
 else
 $(error Not set PIXEL_LAUNCHER_VARIANT, read more in vendor/PixelLauncherExtended/codename.txt)
 endif
